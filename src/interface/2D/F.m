@@ -39,7 +39,7 @@ model = fwi2d_model_compatibility(model);
 
 if exist('freqsxsy','var')==0, freqsxsy = []; end
 
-nlabs = parpool_size();
+nlabs = parpool_size(); 
 if nlabs==0
     J = opDF(m,Q,model,params);
     D = PDEfunc(PDEopts.FORW_MODEL,m,Q,[],[],model,params,freqsxsy);

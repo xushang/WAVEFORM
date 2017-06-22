@@ -34,7 +34,7 @@ model_r.n = n;
 model_r.nb = [20 20];
 
 % frequencies [5, 10, 15] Hz.
-model_r.freq = [5 10 15]; nfreq = length(model_r.freq);
+model_r.freq = linspace(2.5,4.5,8); nfreq = length(model_r.freq);
 
 % Ricker wavelet with peak frequency f0 and phase shift t0
 model_r.f0 = 10;
@@ -54,6 +54,7 @@ Q = speye(nsrc);
 m = 1e6./(v0(:) + dv(:)).^2;
 
 %% create data
+
 D = F(m,Q,model_r);
 
 %% inversion
